@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FlipNumber from './components/flip/FlipNumber.vue';
+import FlipClock from './components/flip/FlipClock.vue';
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import FlipNumber from './components/flip/FlipNumber.vue';
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
 
-    <FlipNumber></FlipNumber>
+    <FlipClock></FlipClock>
   </div>
 </template>
 

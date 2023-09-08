@@ -1,5 +1,5 @@
 <template>
-  <div class="flip" :class="[flipType, { 'go': isFlipping }]" @click="flip(FlipType.Down, 0, 1)">
+  <div class="flip" :class="[flipType, { 'go': isFlipping }]" @click="flip(FlipType.Down, '0', '1')">
     <div class="digital front" :class="_textClass(frontTextFromData)"></div>
     <div class="digital back" :class="_textClass(backTextFromData)"></div>
   </div>
@@ -7,8 +7,8 @@
 
 <script lang="ts">
 enum FlipType {
- Down = 'down',
- Up = 'up'
+  Down = 'down',
+  Up = 'up'
 }
 </script>
 
@@ -16,14 +16,14 @@ enum FlipType {
 import { ref, onBeforeMount } from 'vue'
 const props = defineProps({
   frontText: {
-    type: [Number],
-    default: 0
+    type: [String],
+    default: '0'
   },
   // back paper text
   // 后牌文字
   backText: {
-    type: [Number],
-    default: 1
+    type: [String],
+    default: '1'
   },
   duration: {
     type: Number,
@@ -33,14 +33,14 @@ const props = defineProps({
 
 const flipType = ref('down')
 const isFlipping = ref(false)
-const frontTextFromData = ref(0)
-const backTextFromData = ref(1)
+const frontTextFromData = ref('0')
+const backTextFromData = ref('1')
 
-const _textClass = (val: number) => {
+const _textClass = (val: string) => {
   return 'number' + val
 }
 
-const flip = (type:  FlipType, front: number, back: number) => {
+const flip = (type: FlipType, front: string, back: string) => {
 
   // 如果处于翻转中，则不执行
   if (isFlipping.value) {
@@ -59,19 +59,19 @@ const flip = (type:  FlipType, front: number, back: number) => {
   }, props.duration)
 }
 
-const flipDown = (front: number, back: number) => {
+const flipDown = (front: string, back: string) => {
   flip(FlipType.Down, front, back)
 }
 
-const flipUp = (front: number, back: number) => {
+const flipUp = (front: string, back: string) => {
   flip(FlipType.Up, front, back)
 }
 
-const setFront =(text: number) => {
+const setFront = (text: string) => {
   frontTextFromData.value = text
 }
 
-const setBack = (text: number) => {
+const setBack = (text: string) => {
   backTextFromData.value = text
 }
 
@@ -79,11 +79,6 @@ onBeforeMount(() => {
   frontTextFromData.value = props.frontText
   backTextFromData.value = props.backText
 })
-const count = ref(0)
-setInterval(() => {
-  flipDown(count.value, count.value+1)
-  count.value = (count.value+1)%10
-}, 1000)
 
 defineExpose({
   flipDown,
@@ -100,7 +95,6 @@ defineExpose({
   width: 60px;
   height: 100px;
   line-height: 100px;
-  border: solid 1px #fff;
   border-radius: 10px;
   background: #fff;
   font-size: 66px;
@@ -125,7 +119,7 @@ defineExpose({
   top: 0;
   bottom: 50%;
   border-radius: 10px 10px 0 0;
-  border-bottom: solid 1px #666;
+  border-bottom: solid 1px #000;
 
 }
 
@@ -247,10 +241,6 @@ defineExpose({
     transform: perspective(160px) rotateX(0deg);
   }
 }
-
-
-
-
 
 .flip.up.go .front:after {
   transform-origin: 50% 0%;
