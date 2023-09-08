@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --config vite.config.demo.ts",
+    "build:demo": "vue-tsc && vite build --config vite.config.demo.ts",
     "build": "vue-tsc && vite build",
-    "build:lib": "vue-tsc && vite build --config vite.config.lib.ts",
     "preview": "vite preview"
   },
   "dependencies": {
