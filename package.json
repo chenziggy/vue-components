@@ -1,8 +1,8 @@
 {
   "name": "vz-components",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-beta.3",
   "description": "The Vue3 Ziggy components.",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.demo.ts",
