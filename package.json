@@ -1,6 +1,6 @@
 {
   "name": "vz-components",
-  "version": "0.1.0-beta.5",
+  "version": "0.1.0-beta.6",
   "description": "The Vue3 Ziggy components.",
   "main": "dist/lib/index.js",
   "module": "dist/es/index.mjs",
