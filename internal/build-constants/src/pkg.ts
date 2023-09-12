@@ -1,0 +1,5 @@
+export const PKG_PREFIX = '@vz-components'
+export const PKG_NAME = 'vz-components'
+export const PKG_CAMELCASE_NAME = 'VzComponents'
+export const PKG_CAMELCASE_LOCAL_NAME = 'VzComponentsLocale'
+export const PKG_BRAND_NAME = 'Vz Components'
