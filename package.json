@@ -17,7 +17,8 @@
     "dev": "vite --config vite.config.demo.ts",
     "build:demo": "vue-tsc && vite build --config vite.config.demo.ts",
     "build": "vue-tsc && vite build &&pnpm start",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "vue": ">=3.0.0"
@@ -28,6 +29,7 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "esbuild": "^0.19.2",
     "gulp": "^4.0.2",
+    "rimraf": "^5.0.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue-tsc": "^1.8.5"
