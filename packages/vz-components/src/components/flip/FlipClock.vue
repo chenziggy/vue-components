@@ -13,8 +13,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import FlipNumber from '@/components/flip/FlipNumber.vue'
-import { formatDate, interval } from '@/utils/utils'
+import FlipNumber from './FlipNumber.vue'
+import { formatDate, interval } from '../../utils/utils'
 
 const flipHour1 = ref()
 const flipHour2 = ref()
