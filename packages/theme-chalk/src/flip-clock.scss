@@ -1,0 +1,11 @@
+.flip__clock ::v-deep() .flip {
+  margin: 0 3px;
+}
+
+.flip__clock em {
+  color: #fff;
+  display: inline-block;
+  font-size: 66px;
+  font-style: normal;
+  vertical-align: top;
+}

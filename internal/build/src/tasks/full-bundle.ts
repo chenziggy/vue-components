@@ -1,7 +1,7 @@
 import path from 'path'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { rollup } from 'rollup'
-// import commonjs from '@rollup/plugin-commonjs'
+import commonjs from '@rollup/plugin-commonjs'
 import vue from '@vitejs/plugin-vue'
 import VueMacros from 'unplugin-vue-macros/rollup'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -44,7 +44,7 @@ async function buildFullEntry(minify: boolean) {
     nodeResolve({
       extensions: ['.mjs', '.js', '.json', '.ts'],
     }),
-    // commonjs(),
+    commonjs(),
     esbuild({
       exclude: [],
       sourceMap: minify,

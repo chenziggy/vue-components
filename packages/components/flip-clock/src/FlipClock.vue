@@ -13,8 +13,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import FlipNumber from './FlipNumber.vue'
-import { formatDate, interval } from '../../utils/utils'
+import FlipNumber from '../../flip-number/src/FlipNumber.vue'
+import { formatDate, interval } from '@vz-components/utils'
 
 const flipHour1 = ref()
 const flipHour2 = ref()
@@ -60,17 +60,3 @@ onMounted(() => {
   run()
 })
 </script>
-
-<style scoped>
-.flip__clock ::v-deep() .flip {
-  margin: 0 3px;
-}
-
-.flip__clock em {
-  color: #fff;
-  display: inline-block;
-  font-size: 66px;
-  font-style: normal;
-  vertical-align: top;
-}
-</style>
