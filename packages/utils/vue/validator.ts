@@ -1,5 +1,5 @@
-import { componentSizes, datePickTypes } from '@element-plus/constants'
-import type { ComponentSize, DatePickType } from '@element-plus/constants'
+import { componentSizes, datePickTypes } from '@vz-components/constants'
+import type { ComponentSize, DatePickType } from '@vz-components/constants'
 
 export const isValidComponentSize = (val: string): val is ComponentSize | '' =>
   ['', ...componentSizes].includes(val)

@@ -1,1 +1,1 @@
-import "@/vz-components/theme-chalk/src/flip-number.scss"
+import "@vz-components/theme-chalk/src/flip-number.scss"

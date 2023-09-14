@@ -1,22 +1,30 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 importers:
 
   .:
     dependencies:
+      '@vueuse/core':
+        specifier: ^9.1.0
+        version: 9.1.0(vue@3.2.37)
       '@vz-components/components':
         specifier: workspace:*
         version: link:packages/components
+      '@vz-components/constants':
+        specifier: workspace:*
+        version: link:packages/constants
       '@vz-components/theme-chalk':
         specifier: workspace:*
         version: link:packages/theme-chalk
       '@vz-components/utils':
         specifier: workspace:*
         version: link:packages/utils
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      lodash-unified:
+        specifier: ^1.0.2
+        version: 1.0.2(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21)
     devDependencies:
       '@commitlint/cli':
         specifier: ^17.0.3
@@ -149,7 +157,7 @@ importers:
         version: 0.4.0(vite@4.4.9)
       unplugin-vue-macros:
         specifier: ^0.11.2
-        version: 0.11.2(vite@4.4.9)(vue@3.2.37)
+        version: 0.11.2(esbuild@0.14.47)(rollup@2.75.7)(vite@2.9.16)(vue@3.2.37)
       vitest:
         specifier: 0.12.6
         version: 0.12.6(@vitest/ui@0.16.0)(c8@7.11.3)(jsdom@16.4.0)(sass@1.53.0)
@@ -299,6 +307,8 @@ importers:
       vue:
         specifier: 3.2.37
         version: 3.2.37
+
+  packages/constants: {}
 
   packages/theme-chalk:
     devDependencies:
@@ -1888,11 +1898,9 @@ packages:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
     dependencies:
       '@types/lodash': 4.14.198
-    dev: true
 
   /@types/lodash@4.14.198:
     resolution: {integrity: sha512-trNJ/vtMZYMLhfN45uLq4ShQSw0/S7xCTLLVM+WM1rmFpba/VS42jVUgaO3w/NOLiWR/09lnYk0yMaA/atdIsg==}
-    dev: true
 
   /@types/minimist@1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
@@ -1973,6 +1981,10 @@ packages:
       '@types/expect': 1.20.4
       '@types/node': 20.6.0
     dev: true
+
+  /@types/web-bluetooth@0.0.15:
+    resolution: {integrity: sha512-w7hEHXnPMEZ+4nGKl/KDRVpxkwYxYExuHOYXyzIzCDzEZ9ZCGMAewulr9IqJu2LR4N37fcnb1XVeuZ09qgOxhA==}
+    dev: false
 
   /@types/yauzl@2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
@@ -2272,6 +2284,31 @@ packages:
     dependencies:
       '@types/node': 20.6.0
     dev: true
+
+  /@vueuse/core@9.1.0(vue@3.2.37):
+    resolution: {integrity: sha512-BIroqvXEqt826aE9r3K5cox1zobuPuAzdYJ36kouC2TVhlXvFKIILgFVWrpp9HZPwB3aLzasmG3K87q7TSyXZg==}
+    dependencies:
+      '@types/web-bluetooth': 0.0.15
+      '@vueuse/metadata': 9.1.0
+      '@vueuse/shared': 9.1.0(vue@3.2.37)
+      vue-demi: 0.14.6(vue@3.2.37)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /@vueuse/metadata@9.1.0:
+    resolution: {integrity: sha512-8OEhlog1iaAGTD3LICZ8oBGQdYeMwByvXetOtAOZCJOzyCRSwqwdggTsmVZZ1rkgYIEqgUBk942AsAPwM21s6A==}
+    dev: false
+
+  /@vueuse/shared@9.1.0(vue@3.2.37):
+    resolution: {integrity: sha512-pB/3njQu4tfJJ78ajELNda0yMG6lKfpToQW7Soe09CprF1k3QuyoNi1tBNvo75wBDJWD+LOnr+c4B5HZ39jY/Q==}
+    dependencies:
+      vue-demi: 0.14.6(vue@3.2.37)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
 
   /@zkochan/which@2.0.3:
     resolution: {integrity: sha512-C1ReN7vt2/2O0fyTsx5xnbQuxBrmG5NMSbcIkPKCCfCTJgpZBsuRYzFXHj3nVq8vTfK7vxHUmzfCpSHgO7j4rg==}
@@ -5986,7 +6023,18 @@ packages:
 
   /lodash-es@4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-    dev: true
+
+  /lodash-unified@1.0.2(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21):
+    resolution: {integrity: sha512-OGbEy+1P+UT26CYi4opY4gebD8cWRDxAT6MAObIVQMiqYdxZr1g3QHWCToVsm31x2NkLS4K3+MC2qInaRMa39g==}
+    peerDependencies:
+      '@types/lodash-es': '*'
+      lodash: '*'
+      lodash-es: '*'
+    dependencies:
+      '@types/lodash-es': 4.17.6
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+    dev: false
 
   /lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
@@ -8489,30 +8537,6 @@ packages:
       rollup: 2.75.7
       unplugin: 0.10.2
       vite: 2.9.16(sass@1.53.0)
-    dev: false
-
-  /unplugin-combine@0.2.8(vite@4.4.9):
-    resolution: {integrity: sha512-Z38AC/TEjXbVyZ5HjVqo+lADj0/dcfwWC0Z4y0LNhybJzJQwmcMxm+ZsqHY3faauj4YigmlRMdptR5JEW9RuLg==}
-    engines: {node: '>=14.19.0'}
-    peerDependencies:
-      esbuild: '>=0.13'
-      rollup: ^2.50.0
-      vite: ^2.3.0 || ^3.0.0
-      webpack: 4 || 5
-    peerDependenciesMeta:
-      esbuild:
-        optional: true
-      rollup:
-        optional: true
-      vite:
-        optional: true
-      webpack:
-        optional: true
-    dependencies:
-      '@antfu/utils': 0.6.3
-      unplugin: 0.10.2
-      vite: 4.4.9(@types/node@20.6.0)(sass@1.53.0)
-    dev: true
 
   /unplugin-element-plus@0.4.0(vite@4.4.9):
     resolution: {integrity: sha512-iE4EZu8pp5Vz/qb9r45sCNSz9Px6KOthBpe6gFBV1E60g9A45HS+JhwAaj4Zki8HZ0YGW3LyrsBCrd+XhOypnQ==}
@@ -8560,31 +8584,6 @@ packages:
       - rollup
       - vite
       - webpack
-    dev: false
-
-  /unplugin-vue-macros@0.11.2(vite@4.4.9)(vue@3.2.37):
-    resolution: {integrity: sha512-DvEFbqyio24pOzSyvzDiCaPXnOwJEd9u1Dr2cshMcnSft6OWBgwbm6IumVBbOSydEpClORcZAouxA9CyjUyMbQ==}
-    engines: {node: '>=14.19.0'}
-    peerDependencies:
-      vue: ^2.7.0 || ^3.2.25
-    dependencies:
-      '@rollup/pluginutils': 4.2.1
-      '@vue-macros/common': 0.11.2
-      '@vue-macros/define-model': 0.11.2
-      '@vue-macros/define-render': 0.11.2
-      '@vue-macros/hoist-static': 0.11.2
-      '@vue-macros/setup-component': 0.11.2
-      '@vue-macros/setup-sfc': 0.11.2
-      local-pkg: 0.4.3
-      unplugin-combine: 0.2.8(vite@4.4.9)
-      unplugin-vue-define-options: 0.11.2
-      vue: 3.2.37
-    transitivePeerDependencies:
-      - esbuild
-      - rollup
-      - vite
-      - webpack
-    dev: true
 
   /unplugin@0.10.2:
     resolution: {integrity: sha512-6rk7GUa4ICYjae5PrAllvcDeuT8pA9+j5J5EkxbMFaV+SalHhxZ7X2dohMzu6C3XzsMT+6jwR/+pwPNR3uK9MA==}
@@ -8877,6 +8876,21 @@ packages:
       - sass
       - stylus
     dev: true
+
+  /vue-demi@0.14.6(vue@3.2.37):
+    resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.37
+    dev: false
 
   /vue-router@4.0.16(vue@3.2.37):
     resolution: {integrity: sha512-JcO7cb8QJLBWE+DfxGUL3xUDOae/8nhM1KVdnudadTAORbuxIC/xAydC5Zr/VLHUDQi1ppuTF5/rjBGzgzrJNA==}
@@ -9195,3 +9209,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

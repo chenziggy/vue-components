@@ -1,1 +1,1 @@
-import "@/vz-components/theme-chalk/flip-clock.css"
+import "@vz-components/theme-chalk/flip-clock.css"
