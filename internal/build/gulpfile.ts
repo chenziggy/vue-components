@@ -19,10 +19,10 @@ export const copyFiles = () =>
       path.resolve(projRoot, 'README.md'),
       path.resolve(epOutput, 'README.md')
     ),
-    copyFile(
-      path.resolve(projRoot, 'global.d.ts'),
-      path.resolve(epOutput, 'global.d.ts')
-    ),
+    // copyFile(
+    //   path.resolve(projRoot, 'global.d.ts'),
+    //   path.resolve(epOutput, 'global.d.ts')
+    // ),
   ])
 
 export const copyTypesDefinitions: TaskFunction = (done) => {
@@ -56,11 +56,13 @@ export default series(
       withTaskName('buildThemeChalk', () =>
         run('pnpm run -C packages/theme-chalk build')
       ),
-      // copyFullStyle
+      copyFullStyle
     )
-  )
+  ),
 
-  // parallel(copyTypesDefinitions, copyFiles)
+  parallel(
+    // copyTypesDefinitions, 
+    copyFiles)
 )
 
 export * from './src'
