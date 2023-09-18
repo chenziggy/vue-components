@@ -1,5 +1,5 @@
 <template>
-  <div class="flip" :class="[flipType, { 'go': isFlipping }]" @click="flip(FlipType.Down, '0', '1')">
+  <div class="vz-flip-number" :class="[flipType, { 'go': isFlipping }]" @click="flip(FlipType.Down, '0', '1')">
     <div class="digital front" :class="_textClass(frontTextFromData)"></div>
     <div class="digital back" :class="_textClass(backTextFromData)"></div>
   </div>

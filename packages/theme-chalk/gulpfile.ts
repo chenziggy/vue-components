@@ -35,7 +35,7 @@ function buildThemeChalk() {
     .pipe(
       rename((path) => {
         if (!noElPrefixFile.test(path.basename)) {
-          path.basename = `el-${path.basename}`
+          path.basename = `vz-${path.basename}`
         }
       })
     )
@@ -82,7 +82,7 @@ export function copyThemeChalkSource() {
 
 export const build = parallel(
   copyThemeChalkSource,
-  series(buildThemeChalk, copyThemeChalkBundle)
+  series(buildThemeChalk,buildDarkCssVars, copyThemeChalkBundle)
 )
 
 export default build

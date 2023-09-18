@@ -1,0 +1,10 @@
+@use './var' as *;
+@use '../mixins/_var.scss' as *;
+@use '../mixins/mixins.scss' as *;
+
+html.dark {
+  color-scheme: dark;
+
+  @include set-component-css-var('bg-color', $bg-color);
+  @include set-component-css-var('text-color', $text-color);
+}

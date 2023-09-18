@@ -1,4 +1,5 @@
 @use "sass:map";
+
 @use '../mixins/function.scss' as *;
 
 $bg-color: () !default;
@@ -28,5 +29,6 @@ $flip-number: map.merge(
   (
     'text-color': getCssVar('text-color', 'regular'),
 
-  )
+  ),
+  $flip-number
 );

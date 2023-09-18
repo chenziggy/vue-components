@@ -13,3 +13,12 @@
     @content;
   }
 }
+
+// dark
+@mixin dark($block) {
+  html.dark {
+    @include b($block) {
+      @content;
+    }
+  }
+}

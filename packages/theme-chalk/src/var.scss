@@ -3,8 +3,12 @@
 @use 'mixins/mixins' as *;
 
 :root {
-  // Background --el-bg-color-#{$type}
   @include set-component-css-var('bg-color', $bg-color);
-  // --el-text-color-#{$type}
+  @include set-component-css-var('text-color', $text-color);
+}
+
+:root {
+  color-scheme: light;
+  @include set-component-css-var('bg-color', $bg-color);
   @include set-component-css-var('text-color', $text-color);
 }
