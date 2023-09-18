@@ -1,10 +1,10 @@
 {
-  "name": "vz-components",
   "version": "0.1.0-beta.11",
+  "packageManager": "pnpm@8.6.2",
   "description": "The Vue3 Ziggy components.",
-  "main": "dist/es/index.mjs",
-  "type": "module",
-  "style": "dist/style.css",
+  "workspaces": [
+    "packages/*"
+  ],
   "exports": {
     ".": {
       "import": "./dist/es/index.mjs",
@@ -83,6 +83,18 @@
     "vue": "3.2.37",
     "vue-router": "^4.0.16",
     "vue-tsc": "^0.38.2"
+  },
+  "engines": {
+    "node": ">= 16"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "vite",
+        "react",
+        "react-dom"
+      ]
+    }
   },
   "author": "Ziggy Chen",
   "license": "MIT"

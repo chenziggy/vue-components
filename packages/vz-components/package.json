@@ -68,6 +68,13 @@
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
   },
+  "sideEffects": [
+    "dist/*",
+    "theme-chalk/**/*.css",
+    "theme-chalk/src/**/*.scss",
+    "es/components/*/style/*",
+    "lib/components/*/style/*"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT"
