@@ -1,0 +1,15 @@
+@use '../common/var' as *;
+
+@use 'config' as *;
+@forward 'function';
+@forward '_var';
+
+
+
+@mixin b($block) {
+  $B: $namespace + $common-separator + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}

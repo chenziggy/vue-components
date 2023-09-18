@@ -1,0 +1,10 @@
+@use 'common/var' as *;
+@use 'mixins/var' as *;
+@use 'mixins/mixins' as *;
+
+:root {
+  // Background --el-bg-color-#{$type}
+  @include set-component-css-var('bg-color', $bg-color);
+  // --el-text-color-#{$type}
+  @include set-component-css-var('text-color', $text-color);
+}
