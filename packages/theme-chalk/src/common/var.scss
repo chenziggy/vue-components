@@ -8,6 +8,7 @@ $bg-color: map.merge(
     '': #ffffff,
     'page': #f2f3f5,
     'overlay': #ffffff,
+    'contrast': #000000,
   ),
   $bg-color
 );
@@ -15,20 +16,30 @@ $bg-color: map.merge(
 $text-color: () !default;
 $text-color: map.merge(
   (
-    'primary': #303133,
+    'primary': #31353b,
     'regular': #606266,
     'secondary': #909399,
     'placeholder': #a8abb2,
     'disabled': #c0c4cc,
+    'contrast': #ffffff,
   ),
   $text-color
 );
 
+// $flip-number: () !default;
+// $flip-number: map.merge(
+//   (
+//     'text-color': getCssVar('text-color', 'regular'),
+//   ),
+//   $flip-number
+// );
+
 $flip-number: () !default;
 $flip-number: map.merge(
   (
-    'text-color': getCssVar('text-color', 'regular'),
-
+    'text-color': getCssVar('text-color', 'contrast'),
+    'bg-color': getCssVar('bg-color', 'contrast')
   ),
   $flip-number
 );
+

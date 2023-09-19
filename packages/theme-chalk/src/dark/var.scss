@@ -14,6 +14,7 @@ $text-color: map.merge(
     'secondary': rgba($text-color-base, 0.65),
     'placeholder': rgba($text-color-base, 0.55),
     'disabled': rgba($text-color-base, 0.4),
+    'contrast': #000000,
   ),
   $text-color
 );
@@ -24,6 +25,16 @@ $bg-color: map.merge(
     'page': #0a0a0a,
     '': #141414,
     'overlay': #1d1e1f,
+    'contrast': #ffffff,
   ),
   $bg-color
+);
+
+$flip-number: () !default;
+$flip-number: map.merge(
+  (
+    'text-color': getCssVar('text-color', 'contrast'),
+    'bg-color': getCssVar('bg-color', 'contrast'),
+  ),
+  $flip-number
 );
