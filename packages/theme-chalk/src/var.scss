@@ -5,10 +5,12 @@
 :root {
   @include set-component-css-var('bg-color', $bg-color);
   @include set-component-css-var('text-color', $text-color);
+  @include set-component-css-var('border-color', $border-color);
 }
 
 :root {
   color-scheme: light;
   @include set-component-css-var('bg-color', $bg-color);
   @include set-component-css-var('text-color', $text-color);
+  @include set-component-css-var('border-color', $border-color);
 }

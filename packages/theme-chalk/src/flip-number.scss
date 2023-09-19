@@ -34,7 +34,8 @@
     top: 0;
     bottom: 50%;
     border-radius: 10px 10px 0 0;
-    border-bottom: solid 1px #000;
+    border-bottom: solid 1px;
+    border-color: getCssVar('flip-number', 'border-color')
   }
 
   .digital:after {
@@ -94,45 +95,45 @@
     content: '9';
   }
 
-  .down .front:before {
+  &.down .front:before {
     z-index: 3;
   }
 
-  .down .back:after {
+  &.down .back:after {
     z-index: 2;
     transform-origin: 50% 0%;
     transform: perspective(160px) rotateX(-180deg);
   }
 
-  .down .front:after,
-  .down .back:before {
+  &.down .front:after,
+  &.down .back:before {
     z-index: 1;
   }
 
-  .up .front:after {
+  &.up .front:after {
     z-index: 3;
   }
 
-  .up .back:before {
+  &.up .back:before {
     z-index: 2;
     transform-origin: 50% 100%;
     transform: perspective(160px) rotateX(180deg);
   }
 
-  .up .front:before,
-  .up .back:after {
+  &.up .front:before,
+  &.up .back:after {
     z-index: 1;
   }
 
 
-  .down.go .front:before {
+  &.down.go .front:before {
     transform-origin: 50% 100%;
     animation: frontFlipDown .6s ease-in-out both;
     box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
     backface-visibility: hidden;
   }
 
-  .down.go .back:after {
+  &.down.go .back:after {
     animation: backFlipDown .6s ease-in-out both;
   }
 
@@ -156,14 +157,14 @@
     }
   }
 
-  .up.go .front:after {
+  &.up.go .front:after {
     transform-origin: 50% 0%;
     animation: frontFlipUp .6s ease-in-out both;
     box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
     backface-visibility: hidden;
   }
 
-  .up.go .back:before {
+  &.up.go .back:before {
     animation: backFlipUp .6s ease-in-out both;
   }
 }

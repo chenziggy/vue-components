@@ -30,11 +30,28 @@ $bg-color: map.merge(
   $bg-color
 );
 
+// border
+$border-color-base: #f5f8ff;
+$border-color: () !default;
+$border-color: map.merge(
+  (
+    'darker': rgba($border-color-base, 0.35),
+    'dark': rgba($border-color-base, 0.3),
+    '': rgba($border-color-base, 0.25),
+    'light': rgba($border-color-base, 0.2),
+    'lighter': rgba($border-color-base, 0.15),
+    'extra-light': rgba($border-color-base, 0.1),
+    'constrast': #ccc,
+  ),
+  $border-color
+);
+
 $flip-number: () !default;
 $flip-number: map.merge(
   (
     'text-color': getCssVar('text-color', 'contrast'),
     'bg-color': getCssVar('bg-color', 'contrast'),
+    'border-color': getCssVar('border-color', 'contrast')
   ),
   $flip-number
 );

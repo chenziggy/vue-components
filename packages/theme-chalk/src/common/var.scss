@@ -26,6 +26,21 @@ $text-color: map.merge(
   $text-color
 );
 
+$border-color: () !default;
+$border-color: map.merge(
+  (
+    '': #dcdfe6,
+    'light': #e4e7ed,
+    'lighter': #ebeef5,
+    'extra-light': #f2f6fc,
+    'dark': #d4d7de,
+    'darker': #cdd0d6,
+    'contrast': #555555,
+  ),
+  $border-color
+);
+
+
 // $flip-number: () !default;
 // $flip-number: map.merge(
 //   (
@@ -38,7 +53,8 @@ $flip-number: () !default;
 $flip-number: map.merge(
   (
     'text-color': getCssVar('text-color', 'contrast'),
-    'bg-color': getCssVar('bg-color', 'contrast')
+    'bg-color': getCssVar('bg-color', 'contrast'),
+    'border-color': getCssVar('border-color', 'contrast')
   ),
   $flip-number
 );
