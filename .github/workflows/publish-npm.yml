@@ -65,9 +65,6 @@ jobs:
       - name: Gen npmrc
         run: echo "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ./.npmrc
 
-      - name: Update npm
-        run: npm install npm@latest -g
-
       - name: Build&publish
         run: sh ./scripts/publish.sh
         env:
