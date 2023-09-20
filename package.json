@@ -15,6 +15,7 @@
   "scripts": {
     "build": "pnpm run -C internal/build start",
     "dev": "pnpm run -C play dev",
+    "test": "vitest",
     "clean": "rimraf dist",
     "gen:version": "tsx scripts/gen-version.ts",
     "update:version": "tsx scripts/update-version.ts",
