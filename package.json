@@ -19,6 +19,7 @@
     "preview": "vite preview",
     "clean": "rimraf dist",
     "gen:version": "tsx scripts/gen-version.ts",
+    "update:version": "tsx scripts/update-version.ts",
     "stub": "pnpm run -r --parallel stub",
     "postinstall": "pnpm stub && concurrently \"pnpm gen:version\" \"pnpm run -C internal/metadata dev\""
   },
