@@ -1,11 +1,22 @@
-.flip__clock .flip {
-  margin: 0 3px;
+@use 'mixins/mixins' as *;
+@use 'common/var' as *;
+
+@include b(flip-clock) {
+  @include set-component-css-var('flip-clock', $flip-clock);
 }
 
-.flip__clock em {
-  color: #fff;
-  display: inline-block;
-  font-size: 66px;
-  font-style: normal;
-  vertical-align: top;
+@include b(flip-clock) {
+  @include b(flip-number) {
+    margin: 0 3px;
+  }
+
+  em {
+    color: getCssVar('flip-clock', 'bg-color');;
+    display: inline-block;
+    font-size: 66px;
+    font-style: normal;
+    vertical-align: top;
+  }
 }
+
+

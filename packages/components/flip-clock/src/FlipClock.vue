@@ -1,5 +1,5 @@
 <template>
-  <div class="flip__clock">
+  <div class="vz-flip-clock">
     <FlipNumber ref="flipHour1"></FlipNumber>
     <FlipNumber ref="flipHour2"></FlipNumber>
     <em>:</em>

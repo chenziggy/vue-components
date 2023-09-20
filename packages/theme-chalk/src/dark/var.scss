@@ -55,3 +55,11 @@ $flip-number: map.merge(
   ),
   $flip-number
 );
+
+$flip-clock: () !default;
+$flip-clock: map.merge(
+  (
+    'bg-color': getCssVar('bg-color', 'contrast'),
+  ),
+  $flip-clock
+);
