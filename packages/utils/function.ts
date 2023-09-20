@@ -39,10 +39,10 @@ export function formatDate(date: Date, dateFormat: string) {
   return dateFormat;
 }
 
-export function interval(ob: Ref<number>, fn: Function, delay: number) {
+export function interval(ob: Ref<NodeJS.Timeout>, fn: Function, delay: number) {
   let wrapper = () => {
     fn.call(null);
-    ob.value = window.setTimeout(wrapper, delay);
+    ob.value = setTimeout(wrapper, delay);
   };
-  ob.value = window.setTimeout(wrapper, delay);
+  ob.value = setTimeout(wrapper, delay);
 }
