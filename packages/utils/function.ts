@@ -39,7 +39,7 @@ export function formatDate(date: Date, dateFormat: string) {
   return dateFormat;
 }
 
-export function interval(ob: Ref<number>, fn: Function, delay: number) {
+export function interval(ob: Ref<ReturnType<typeof setTimeout>>, fn: Function, delay: number) {
   let wrapper = () => {
     fn.call(null);
     ob.value = setTimeout(wrapper, delay);

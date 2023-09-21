@@ -44,9 +44,9 @@ const init = () => {
 }
 
 
-const timer = ref<number>(0) 
+const timer = ref() as Ref<ReturnType<typeof setTimeout>> 
 const run = () => {
-  interval(timer, () => {
+  interval(timer , () => {
     let now = new Date()
     let nowTimeStr = formatDate(new Date(now.getTime() - 1000), 'hhmmss')
     let nextTimeStr = formatDate(now, 'hhmmss')
