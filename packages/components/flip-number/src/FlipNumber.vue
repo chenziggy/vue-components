@@ -1,5 +1,5 @@
 <template>
-  <div class="vz-flip-number" :class="[flipType, { 'go': isFlipping }]" @click="flip(FlipType.Down, '0', '1')">
+  <div :class="[ ns.b(), ns.m(flipType), ns.is('go', isFlipping)]">
     <div class="digital front" :class="_textClass(frontTextFromData)"></div>
     <div class="digital back" :class="_textClass(backTextFromData)"></div>
   </div>
@@ -13,6 +13,7 @@ enum FlipType {
 </script>
 
 <script setup lang="ts">
+import { useNamespace } from '@vz-components/hooks'
 import { ref, onBeforeMount } from 'vue'
 const props = defineProps({
   frontText: {
@@ -32,6 +33,7 @@ const props = defineProps({
 })
 
 const flipType = ref('down')
+const ns = useNamespace('flip-number')
 const isFlipping = ref(false)
 const frontTextFromData = ref('0')
 const backTextFromData = ref('1')

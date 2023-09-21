@@ -1,5 +1,5 @@
 <template>
-  <div class="vz-flip-clock">
+  <div :class="[ns.b()]">
     <FlipNumber ref="flipHour1"></FlipNumber>
     <FlipNumber ref="flipHour2"></FlipNumber>
     <em>:</em>
@@ -12,9 +12,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, Ref } from 'vue'
 import FlipNumber from '../../flip-number/src/FlipNumber.vue'
+import { useNamespace } from '@vz-components/hooks'
 import { formatDate, interval } from '@vz-components/utils'
+
+
+const ns = useNamespace('flip-clock')
 
 const flipHour1 = ref()
 const flipHour2 = ref()
@@ -40,7 +44,7 @@ const init = () => {
 }
 
 
-const timer = ref<number>(0)
+const timer = ref<number>(0) 
 const run = () => {
   interval(timer, () => {
     let now = new Date()

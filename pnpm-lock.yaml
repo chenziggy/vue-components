@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -13,6 +17,9 @@ importers:
       '@vz-components/constants':
         specifier: workspace:*
         version: link:packages/constants
+      '@vz-components/hooks':
+        specifier: workspace:*
+        version: link:packages/hooks
       '@vz-components/theme-chalk':
         specifier: workspace:*
         version: link:packages/theme-chalk
@@ -168,7 +175,7 @@ importers:
         specifier: 0.12.6
         version: 0.12.6(@vitest/ui@0.16.0)(c8@7.11.3)(jsdom@16.4.0)(sass@1.53.0)
       vue:
-        specifier: 3.2.37
+        specifier: ^3.2.37
         version: 3.2.37
       vue-router:
         specifier: ^4.0.16
@@ -247,7 +254,7 @@ importers:
         specifier: ^0.7.4
         version: 0.7.4
       vue:
-        specifier: 3.2.37
+        specifier: ^3.2.37
         version: 3.2.37
 
   internal/build-constants:
@@ -311,10 +318,16 @@ importers:
   packages/components:
     dependencies:
       vue:
-        specifier: 3.2.37
+        specifier: ^3.2.37
         version: 3.2.37
 
   packages/constants: {}
+
+  packages/hooks:
+    dependencies:
+      vue:
+        specifier: ^3.2.37
+        version: 3.2.37
 
   packages/theme-chalk:
     devDependencies:
@@ -352,7 +365,7 @@ importers:
   packages/utils:
     dependencies:
       vue:
-        specifier: 3.2.37
+        specifier: ^3.2.37
         version: 3.2.37
 
   packages/vz-components:
@@ -416,7 +429,7 @@ importers:
   play:
     dependencies:
       vue:
-        specifier: 3.2.37
+        specifier: ^3.2.37
         version: 3.2.37
     devDependencies:
       '@vitejs/plugin-vue':
@@ -9408,7 +9421,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

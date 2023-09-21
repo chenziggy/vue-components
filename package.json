@@ -23,11 +23,12 @@
     "postinstall": "pnpm stub && concurrently \"pnpm gen:version\" \"pnpm run -C internal/metadata dev\""
   },
   "peerDependencies": {
-    "vue": "3.2.37"
+    "vue": "^3.2.37"
   },
   "dependencies": {
     "@vueuse/core": "^9.1.0",
     "@vz-components/components": "workspace:*",
+    "@vz-components/hooks": "workspace:*",
     "@vz-components/constants": "workspace:*",
     "@vz-components/theme-chalk": "workspace:*",
     "@vz-components/utils": "workspace:*",
@@ -82,7 +83,7 @@
     "unplugin-vue-macros": "^0.11.2",
     "vite": "^4.4.9",
     "vitest": "0.12.6",
-    "vue": "3.2.37",
+    "vue": "^3.2.37",
     "vue-router": "^4.0.16",
     "vue-tsc": "^0.38.2"
   },
